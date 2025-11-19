@@ -1,0 +1,22 @@
+[build]
+  base = "."
+  command = "npm install && npm run build"
+  publish = "dist/public"
+
+[functions]
+  directory = "dist"
+  node_bundler = "esbuild"
+
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/index/:splat"
+  status = 200
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[dev]
+  command = "npm run dev"
+  port = 5000
