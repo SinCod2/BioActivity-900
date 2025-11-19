@@ -1,10 +1,11 @@
 [build]
-  command = "cd BioPredictSafety && npm install && npm run build"
+  command = "cd BioPredictSafety && npm install && npm run build && npm run build:functions"
   publish = "BioPredictSafety/dist/public"
 
 [functions]
-  directory = "BioPredictSafety/netlify/functions"
+  directory = "BioPredictSafety/.netlify/functions"
   node_bundler = "esbuild"
+  external_node_modules = ["sharp", "canvas"]
 
 [[redirects]]
   from = "/api/*"

@@ -1,7 +1,7 @@
 import serverless from 'serverless-http';
 import 'dotenv/config';
 import express from 'express';
-import { registerRoutes } from '../server/routes.js';
+import { registerRoutes } from '../../server/routes';
 
 const app = express();
 app.set('etag', false);
