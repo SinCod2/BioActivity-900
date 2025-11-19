@@ -1,0 +1,6 @@
+
+> rest-express@1.0.0 dev
+> tsx server/index.ts
+
+✓ All routes registered, including /api/predict
+11:31:59 AM [express] serving on http://localhost:5001

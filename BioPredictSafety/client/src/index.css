@@ -1,0 +1,347 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(224 62% 97%);
+  --foreground: hsl(222 60% 14%);
+  --card: hsl(0 0% 100% / 0.78);
+  --card-foreground: hsl(222 60% 14%);
+  --popover: hsl(0 0% 100% / 0.9);
+  --popover-foreground: hsl(222 60% 14%);
+  --primary: hsl(217 91% 60%);
+  --primary-foreground: hsl(210 40% 98%);
+  --secondary: hsl(218 40% 95% / 0.8);
+  --secondary-foreground: hsl(222 60% 24%);
+  --muted: hsl(216 40% 94% / 0.65);
+  --muted-foreground: hsl(220 15% 45%);
+  --accent: hsl(280 65% 90% / 0.65);
+  --accent-foreground: hsl(250 56% 24%);
+  --destructive: hsl(356 76% 56%);
+  --destructive-foreground: hsl(0 0% 98%);
+  --success: hsl(152 64% 44%);
+  --success-foreground: hsl(152 96% 94%);
+  --warning: hsl(33 93% 54%);
+  --warning-foreground: hsl(210 30% 98%);
+  --border: hsl(218 32% 86% / 0.55);
+  --input: hsl(216 24% 88% / 0.75);
+  --ring: hsl(217 91% 60% / 0.75);
+  --chart-1: hsl(217 92% 60%);
+  --chart-2: hsl(181 71% 52%);
+  --chart-3: hsl(281 85% 65%);
+  --chart-4: hsl(162 73% 45%);
+  --chart-5: hsl(37 100% 65%);
+  --sidebar: hsl(224 62% 97% / 0.65);
+  --sidebar-foreground: hsl(222 60% 14%);
+  --sidebar-primary: hsl(217 91% 60%);
+  --sidebar-primary-foreground: hsl(0 0% 98%);
+  --sidebar-accent: hsl(220 56% 88%);
+  --sidebar-accent-foreground: hsl(220 65% 26%);
+  --sidebar-border: hsl(220 33% 82% / 0.45);
+  --sidebar-ring: hsl(217 91% 60% / 0.45);
+  --font-sans: "Space Grotesk", "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-serif: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "Space Mono", Menlo, monospace;
+  --radius: 0.9rem;
+
+  --app-background-gradient: radial-gradient(circle at 20% 20%, rgba(96, 165, 250, 0.33), transparent 45%),
+    radial-gradient(circle at 80% 8%, rgba(168, 85, 247, 0.28), transparent 42%),
+    radial-gradient(circle at 50% 90%, rgba(45, 212, 191, 0.22), transparent 40%);
+  --app-grid-color: rgba(15, 23, 42, 0.06);
+  --app-grid-highlight: rgba(59, 130, 246, 0.08);
+  --glass-surface-primary: rgba(255, 255, 255, 0.8);
+  --glass-surface-secondary: rgba(246, 248, 255, 0.86);
+  --glass-border: rgba(148, 163, 184, 0.28);
+  --glass-highlight: rgba(255, 255, 255, 0.55);
+  --glow-shadow: 0 40px 120px -60px rgba(14, 78, 245, 0.45);
+}
+
+.dark {
+  --background: hsl(224 65% 6%);
+  --foreground: hsl(220 17% 92%);
+  --card: hsl(219 54% 14% / 0.78);
+  --card-foreground: hsl(220 17% 92%);
+  --popover: hsl(222 45% 8%);
+  --popover-foreground: hsl(220 17% 92%);
+  --primary: hsl(217 91% 70%);
+  --primary-foreground: hsl(216 71% 6%);
+  --secondary: hsl(219 38% 18% / 0.75);
+  --secondary-foreground: hsl(218 62% 92%);
+  --muted: hsl(219 42% 18% / 0.65);
+  --muted-foreground: hsl(220 19% 72%);
+  --accent: hsl(280 62% 32% / 0.65);
+  --accent-foreground: hsl(280 100% 92%);
+  --destructive: hsl(356 80% 60%);
+  --destructive-foreground: hsl(0 0% 100%);
+  --success: hsl(152 80% 55%);
+  --success-foreground: hsl(155 100% 10%);
+  --warning: hsl(33 93% 58%);
+  --warning-foreground: hsl(210 20% 10%);
+  --border: hsl(222 34% 24% / 0.65);
+  --input: hsl(220 32% 24% / 0.75);
+  --ring: hsl(217 91% 70% / 0.6);
+  --chart-1: hsl(217 86% 72%);
+  --chart-2: hsl(181 88% 68%);
+  --chart-3: hsl(281 84% 72%);
+  --chart-4: hsl(162 94% 64%);
+  --chart-5: hsl(37 100% 72%);
+  --sidebar: hsl(222 46% 10% / 0.72);
+  --sidebar-foreground: hsl(220 17% 88%);
+  --sidebar-primary: hsl(217 91% 70%);
+  --sidebar-primary-foreground: hsl(222 32% 6%);
+  --sidebar-accent: hsl(221 58% 18% / 0.65);
+  --sidebar-accent-foreground: hsl(221 65% 82%);
+  --sidebar-border: hsl(220 34% 22% / 0.55);
+  --sidebar-ring: hsl(217 91% 70% / 0.45);
+  --font-sans: "Space Grotesk", "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-serif: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "Space Mono", Menlo, monospace;
+  --radius: 0.9rem;
+
+  --app-background-gradient: radial-gradient(circle at 15% 20%, rgba(37, 99, 235, 0.24), transparent 45%),
+    radial-gradient(circle at 75% 0%, rgba(168, 85, 247, 0.28), transparent 38%),
+    radial-gradient(circle at 50% 85%, rgba(20, 184, 166, 0.18), transparent 38%);
+  --app-grid-color: rgba(148, 163, 184, 0.08);
+  --app-grid-highlight: rgba(56, 189, 248, 0.12);
+  --glass-surface-primary: rgba(15, 23, 42, 0.72);
+  --glass-surface-secondary: rgba(17, 24, 39, 0.78);
+  --glass-border: rgba(59, 130, 246, 0.22);
+  --glass-highlight: rgba(255, 255, 255, 0.12);
+  --glow-shadow: 0 48px 160px -76px rgba(0, 140, 255, 0.55);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased text-foreground;
+    min-height: 100vh;
+    position: relative;
+    background: radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.9), transparent 65%),
+      color-mix(in srgb, var(--background) 88%, rgba(4, 12, 31, 0.92));
+    color: var(--foreground);
+  }
+
+  body::before,
+  body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -2;
+    transition: opacity 0.6s ease;
+  }
+
+  body::before {
+    background: var(--app-background-gradient);
+    filter: saturate(1.2);
+    opacity: 0.9;
+  }
+
+  body::after {
+    background-image:
+      linear-gradient(0deg, transparent 24%, var(--app-grid-color) 25%, var(--app-grid-color) 26%, transparent 27%),
+      linear-gradient(90deg, transparent 24%, var(--app-grid-color) 25%, var(--app-grid-color) 26%, transparent 27%),
+      radial-gradient(circle at 15% 15%, var(--app-grid-highlight), transparent 60%),
+      radial-gradient(circle at 80% 75%, rgba(236, 72, 153, 0.12), transparent 50%);
+    background-size: 110px 110px, 110px 110px, 100% 100%, 100% 100%;
+    mix-blend-mode: lighten;
+    opacity: 0.55;
+  }
+}
+
+@layer components {
+  .glass-panel {
+    position: relative;
+    overflow: hidden;
+    border-radius: clamp(1rem, 2.8vw, 1.75rem);
+    border: 1px solid var(--glass-border);
+    background: linear-gradient(140deg, var(--glass-surface-primary) 0%, var(--glass-surface-secondary) 75%);
+    box-shadow: var(--glow-shadow);
+    backdrop-filter: blur(26px);
+    transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1), border 0.3s ease, box-shadow 0.6s ease;
+  }
+
+  .glass-panel::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 20% -10%, var(--glass-highlight), transparent 60%);
+    opacity: 0.35;
+    mix-blend-mode: screen;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+  }
+
+  .glass-panel::after {
+    content: "";
+    position: absolute;
+    inset: 1px;
+    border-radius: clamp(0.9rem, 2.4vw, 1.6rem);
+    background: linear-gradient(160deg, rgba(255, 255, 255, 0.16), transparent 70%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+  }
+
+  .glass-panel:hover {
+    transform: translateY(-6px);
+    border-color: color-mix(in srgb, var(--glass-border) 55%, var(--primary) 45%);
+    box-shadow: 0 42px 160px -70px rgba(59, 130, 246, 0.55);
+  }
+
+  .glass-panel:hover::after {
+    opacity: 0.9;
+  }
+
+  .page-grid {
+    position: relative;
+    border-radius: clamp(1.5rem, 4vw, 3rem);
+    border: 1px solid rgba(148, 163, 184, 0.18);
+    background: linear-gradient(120deg, rgba(255, 255, 255, 0.06), transparent 55%),
+      linear-gradient(200deg, rgba(99, 102, 241, 0.12), transparent 65%);
+    backdrop-filter: blur(26px);
+  }
+
+  .page-grid::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background-image: linear-gradient(rgba(148, 163, 184, 0.12) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(148, 163, 184, 0.12) 1px, transparent 1px);
+    background-size: 44px 44px;
+    opacity: 0.35;
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0));
+    pointer-events: none;
+  }
+
+  .page-hero-spotlight {
+    position: absolute;
+    inset: auto auto -40% -25%;
+    width: clamp(420px, 45vw, 520px);
+    aspect-ratio: 1 / 1;
+    background: radial-gradient(circle, rgba(79, 70, 229, 0.18), transparent 70%);
+    filter: blur(0.5px);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .neon-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-radius: 9999px;
+    border: 1px solid rgba(148, 163, 184, 0.3);
+    background: linear-gradient(120deg, rgba(59, 130, 246, 0.18), rgba(168, 85, 247, 0.18));
+    padding: 0.375rem 0.9rem;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: color-mix(in srgb, var(--primary) 65%, var(--foreground) 45%);
+  }
+
+  .stat-glow {
+    box-shadow: 0 0 0 1px rgba(148, 163, 184, 0.24);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .stat-glow::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(120deg, rgba(59, 130, 246, 0.18), transparent 70%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+
+  .stat-glow:hover::after {
+    opacity: 1;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .glow-divider {
+    position: relative;
+    display: block;
+    height: 1px;
+    width: 100%;
+    background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.35), transparent);
+  }
+
+  .card-grid {
+    display: grid;
+    gap: clamp(1rem, 3vw, 2.5rem);
+  }
+}
+
+.drawing-canvas {
+  background:
+    linear-gradient(90deg, rgba(148, 163, 184, 0.16) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(148, 163, 184, 0.16) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+.molecule-structure {
+  font-family: "Space Mono", "Courier New", monospace;
+  white-space: pre-wrap;
+}
+
+select {
+  color: inherit;
+  background-color: color-mix(in srgb, var(--card) 70%, rgba(255, 255, 255, 0.25));
+  border-radius: 0.75rem;
+}
+
+select option {
+  background-color: var(--background);
+  color: inherit;
+  padding: 0.5rem 0.75rem;
+}
+
+select option:hover,
+select option:focus,
+select option:checked {
+  background-color: color-mix(in srgb, var(--primary) 35%, rgba(255, 255, 255, 0.9));
+  color: var(--primary-foreground);
+}
+
+@keyframes rocket-orbit {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rocket-flame {
+  0%,
+  100% {
+    transform: scaleY(1) scaleX(1);
+    opacity: 0.65;
+  }
+  50% {
+    transform: scaleY(1.4) scaleX(0.85);
+    opacity: 1;
+  }
+}
+
+.rocket-orbit {
+  animation: rocket-orbit 7s ease-in-out infinite;
+  transform-origin: 50% 50%;
+}
+
+.rocket-exhaust {
+  animation: rocket-flame 0.7s ease-in-out infinite;
+  transform-origin: top;
+}
